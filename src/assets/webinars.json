@@ -1,0 +1,35 @@
+[
+    {
+        "image": "assets/webinar1.jpg",
+        "attendees": "200+",
+        "duration": "24:50",
+        "credits": 2,
+        "title": "Controversies in Bipolar 1 Disorder (BP-1): Implications for Asthma from",
+        "org": "PDGI Indonesia",
+        "orgLogo": "assets/pdgi.png",
+        "highlights": "Manage chronic and complex diseases",
+        "expiry": null
+    },
+    {
+        "image": "assets/webinar2.jpg",
+        "attendees": "200+",
+        "duration": "24:50",
+        "credits": 1.5,
+        "title": "Virus is like any other respiratory virus that causes common",
+        "org": "GSK",
+        "orgLogo": "assets/gsk.png",
+        "highlights": "Manage chronic and complex diseases",
+        "expiry": "23h 30m"
+    },
+    {
+        "image": "assets/webinar3.jpg",
+        "attendees": "200+",
+        "duration": "24:50",
+        "credits": 2,
+        "title": "Virus is like any other respiratory virus that causes common",
+        "org": "Bayer",
+        "orgLogo": "assets/bayer.png",
+        "highlights": "Manage chronic and complex diseases",
+        "expiry": null
+    }
+]

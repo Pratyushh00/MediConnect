@@ -1,0 +1,16 @@
+/* Outer box with light background and rounded corners */
+
+/* Each pill tag */
+.tag-pill {
+    padding: 4px 12px;
+    border: 1px solid #b5e2e8;
+    border-radius: 20px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag-pill:hover {
+    background-color: #d9f0f5;
+}

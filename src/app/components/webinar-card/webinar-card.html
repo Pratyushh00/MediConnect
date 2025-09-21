@@ -1,0 +1,30 @@
+<div class="webinar-card card shadow-sm mb-4">
+    <div class="card-img-top position-relative">
+        <img [src]="webinar.image" alt="Webinar" class="img-fluid rounded-top w-100"
+            style="height: 180px; object-fit: cover;">
+        <div class="live-badge position-absolute top-0 start-0 m-2 d-flex align-items-center">
+            <span class="badge bg-danger me-2">Live</span>
+            <span class="bg-white rounded-pill px-2 py-1 text-dark fw-bold small d-flex align-items-center">
+                <i class="bi bi-people me-1"></i> {{ webinar.attendees }}
+            </span>
+        </div>
+        <span class="duration position-absolute bottom-0 end-0 m-2 bg-dark text-white rounded px-2 py-1 small">{{
+            webinar.duration }}</span>
+    </div>
+    <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+            <span class="credit-badge badge bg-warning text-dark me-2">{{ webinar.credits }} Credits</span>
+            <span *ngIf="webinar.expiry" class="text-danger small">(Expiring in {{ webinar.expiry }})</span>
+        </div>
+        <h6 class="card-title fw-bold mb-1">{{ webinar.title }}</h6>
+        <div class="d-flex align-items-center mb-2">
+            <img [src]="webinar.orgLogo" alt="Org" class="me-2" style="width: 24px; height: 24px; object-fit: contain;">
+            <span class="text-muted small">by {{ webinar.org }}</span>
+        </div>
+        <div class="key-highlights bg-light rounded p-2 mb-3">
+            <span class="text-uppercase text-secondary small fw-bold">Key Highlights</span>
+            <div class="mt-1 text-dark">{{ webinar.highlights }}</div>
+        </div>
+        <button class="btn btn-dark w-100">Watch now</button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.dashboard-bg {
+    background: #f8f6f3;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.btn-outline-dark {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.speakers-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #e0e0e0 #fff;
+    padding-bottom: 8px;
+}
+
+.speakers-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.speakers-scroll::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.speakers-scroll::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.tags-container {
+    background-color: #e0f6fa;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
