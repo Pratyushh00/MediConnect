@@ -1,35 +1,109 @@
-[
-    {
-        "image": "assets/webinar1.jpg",
-        "attendees": "200+",
-        "duration": "24:50",
-        "credits": 2,
-        "title": "Controversies in Bipolar 1 Disorder (BP-1): Implications for Asthma from",
-        "org": "PDGI Indonesia",
-        "orgLogo": "assets/pdgi.png",
-        "highlights": "Manage chronic and complex diseases",
-        "expiry": null
-    },
-    {
-        "image": "assets/webinar2.jpg",
-        "attendees": "200+",
-        "duration": "24:50",
-        "credits": 1.5,
-        "title": "Virus is like any other respiratory virus that causes common",
-        "org": "GSK",
-        "orgLogo": "assets/gsk.png",
-        "highlights": "Manage chronic and complex diseases",
-        "expiry": "23h 30m"
-    },
-    {
-        "image": "assets/webinar3.jpg",
-        "attendees": "200+",
-        "duration": "24:50",
-        "credits": 2,
-        "title": "Virus is like any other respiratory virus that causes common",
-        "org": "Bayer",
-        "orgLogo": "assets/bayer.png",
-        "highlights": "Manage chronic and complex diseases",
-        "expiry": null
-    }
-]
+{
+    "liveWebinars": [
+        {
+            "id": "1",
+            "title": "Controversies in Bipolar 1 Disorder (BP-1): Implications for Asthama from",
+            "credits": 2,
+            "isLive": true,
+            "viewers": 200,
+            "duration": "24:50",
+            "instructor": {
+                "name": "PDGI Indonesia",
+                "organization": "by PDGI Indonesia",
+                "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Virus is like any other respiratory virus that causes common",
+            "credits": 1.5,
+            "isExpiring": true,
+            "expiringDays": 30,
+            "isLive": true,
+            "viewers": 200,
+            "duration": "24:50",
+            "instructor": {
+                "name": "GSK",
+                "organization": "by GSK",
+                "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Virus is like any other respiratory virus that causes common",
+            "credits": 2,
+            "isLive": true,
+            "viewers": 200,
+            "duration": "24:50",
+            "instructor": {
+                "name": "Bayer",
+                "organization": "by Bayer",
+                "avatar": "https://images.unsplash.com/photo-1494790108755-2616c57c8e5f?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ]
+        }
+    ],
+    "upcomingWebinars": [
+        {
+            "id": "4",
+            "title": "The Covid19 Management of Parox Health caretine",
+            "credits": 1.5,
+            "isExpiring": true,
+            "expiringDays": 20,
+            "instructor": {
+                "name": "PDGI Indonesia",
+                "organization": "by PDGI Indonesia",
+                "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ],
+            "scheduledDate": "2025-01-07T12:30:00Z",
+            "notifyMe": false
+        },
+        {
+            "id": "5",
+            "title": "Perspectives in The Covid19 Management of Parox Health",
+            "credits": 2,
+            "instructor": {
+                "name": "PDGI Indonesia",
+                "organization": "by PDGI Indonesia",
+                "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ],
+            "scheduledDate": "2025-01-07T12:30:00Z",
+            "notifyMe": false
+        },
+        {
+            "id": "6",
+            "title": "The Covid19 Management of Parox Health caretine",
+            "credits": 2,
+            "instructor": {
+                "name": "PDGI Indonesia",
+                "organization": "by PDGI Indonesia",
+                "avatar": "https://images.unsplash.com/photo-1494790108755-2616c57c8e5f?w=40&h=40&fit=crop&crop=face"
+            },
+            "thumbnail": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop",
+            "keyHighlights": [
+                "Manage chronic and complex diseases"
+            ],
+            "scheduledDate": "2025-01-07T12:30:00Z",
+            "notifyMe": false
+        }
+    ]
+}

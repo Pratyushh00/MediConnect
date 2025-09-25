@@ -1,34 +1,45 @@
 .navbar {
   min-height: 64px;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
   .navbar-logo {
     height: 32px;
     width: auto;
   }
+
   .search-box {
     width: 260px;
+
     .form-control {
       background: #f7f7f7;
       border: 1px solid #e0e0e0;
       font-size: 1rem;
       height: 38px;
     }
+
     .search-icon {
       color: #bdbdbd;
       left: 12px;
       font-size: 1.1rem;
     }
   }
+
   .navbar-nav {
     .nav-item {
       cursor: pointer;
+
       .nav-label {
         font-size: 0.95rem;
         color: #888;
       }
+
       &.active .nav-label {
         color: #222;
         font-weight: 600;
       }
+
       &.active .nav-underline {
         width: 32px;
         height: 3px;
@@ -38,13 +49,15 @@
       }
     }
   }
+
   .btn-dark {
     font-size: 1rem;
     font-weight: 600;
     border-radius: 20px;
   }
+
   .rounded-circle {
     border: 2px solid #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }

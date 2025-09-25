@@ -1,30 +1,148 @@
-<div class="webinar-card card shadow-sm mb-4">
-    <div class="card-img-top position-relative">
-        <img [src]="webinar.image" alt="Webinar" class="img-fluid rounded-top w-100"
-            style="height: 180px; object-fit: cover;">
-        <div class="live-badge position-absolute top-0 start-0 m-2 d-flex align-items-center">
-            <span class="badge bg-danger me-2">Live</span>
-            <span class="bg-white rounded-pill px-2 py-1 text-dark fw-bold small d-flex align-items-center">
-                <i class="bi bi-people me-1"></i> {{ webinar.attendees }}
-            </span>
+<!-- webinar.component.html -->
+<div class="webinar-container">
+
+    <!-- Live Webinars Section -->
+    <section class="webinar-section mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title">Live webinars</h2>
+            <button class="btn btn-outline-secondary btn-sm view-all-btn" (click)="onViewAll('live')">
+                View all
+            </button>
         </div>
-        <span class="duration position-absolute bottom-0 end-0 m-2 bg-dark text-white rounded px-2 py-1 small">{{
-            webinar.duration }}</span>
-    </div>
-    <div class="card-body">
-        <div class="d-flex align-items-center mb-2">
-            <span class="credit-badge badge bg-warning text-dark me-2">{{ webinar.credits }} Credits</span>
-            <span *ngIf="webinar.expiry" class="text-danger small">(Expiring in {{ webinar.expiry }})</span>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 col-12" *ngFor="let webinar of liveWebinars">
+                <div class="webinar-card live-card">
+                    <div class="card-thumbnail position-relative">
+                        <img [src]="webinar.thumbnail" [alt]="webinar.title" class="w-100">
+
+                        <!-- Live Badge -->
+                        <div class="live-badge d-flex align-items-center">
+                            <span class="live-dot me-1"></span>
+                            <small class="text-white fw-medium">Live</small>
+                        </div>
+
+                        <!-- Viewers Count -->
+                        <div class="viewers-count d-flex align-items-center">
+                            <i class="fas fa-users me-1"></i>
+                            <small class="text-white">{{ webinar.viewers }}+</small>
+                        </div>
+
+                        <!-- Duration -->
+                        <div class="duration-badge">
+                            <small class="text-white">{{ webinar.duration }}</small>
+                        </div>
+
+                        <!-- Mute/Audio Controls -->
+                        <div class="audio-controls">
+                            <i class="fas fa-volume-mute text-white"></i>
+                            <i class="fas fa-expand text-white ms-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-content p-3">
+                        <!-- Credits Badge -->
+                        <div class="credits-section mb-2">
+                            <span class="credits-badge">
+                                <i class="fas fa-star text-warning me-1"></i>
+                                {{ webinar.credits }} Credits
+                                <span *ngIf="webinar.isExpiring" class="expiring-text">
+                                    (Expiring in {{ webinar.expiringDays }}h 30m)
+                                </span>
+                            </span>
+                        </div>
+
+                        <!-- Title -->
+                        <h5 class="card-title">{{ webinar.title }}</h5>
+
+                        <!-- Instructor -->
+                        <div class="instructor-info d-flex align-items-center mb-3">
+                            <img [src]="webinar.instructor.avatar" [alt]="webinar.instructor.name"
+                                class="instructor-avatar me-2">
+                            <small class="text-muted">{{ webinar.instructor.organization }}</small>
+                        </div>
+
+                        <!-- Key Highlights -->
+                        <div class="key-highlights mb-3">
+                            <small class="text-muted d-block mb-1">KEY HIGHLIGHTS</small>
+                            <small class="highlights-text">{{ webinar.keyHighlights[0] }}</small>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="btn btn-dark w-100 watch-btn" (click)="onWatchNow(webinar)">
+                            Watch now
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h6 class="card-title fw-bold mb-1">{{ webinar.title }}</h6>
-        <div class="d-flex align-items-center mb-2">
-            <img [src]="webinar.orgLogo" alt="Org" class="me-2" style="width: 24px; height: 24px; object-fit: contain;">
-            <span class="text-muted small">by {{ webinar.org }}</span>
+    </section>
+
+    <!-- Upcoming Webinars Section -->
+    <section class="webinar-section">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title">Upcoming webinars</h2>
+            <button class="btn btn-outline-secondary btn-sm view-all-btn" (click)="onViewAll('upcoming')">
+                View all
+            </button>
         </div>
-        <div class="key-highlights bg-light rounded p-2 mb-3">
-            <span class="text-uppercase text-secondary small fw-bold">Key Highlights</span>
-            <div class="mt-1 text-dark">{{ webinar.highlights }}</div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 col-12" *ngFor="let webinar of upcomingWebinars">
+                <div class="webinar-card upcoming-card">
+                    <div class="card-thumbnail position-relative">
+                        <img [src]="webinar.thumbnail" [alt]="webinar.title" class="w-100">
+                    </div>
+
+                    <div class="card-content p-3">
+                        <!-- Credits Badge -->
+                        <div class="credits-section mb-2">
+                            <span class="credits-badge">
+                                <i class="fas fa-star text-warning me-1"></i>
+                                {{ webinar.credits }} Credits
+                                <span *ngIf="webinar.isExpiring" class="expiring-text">
+                                    (Expiring in {{ webinar.expiringDays }} days)
+                                </span>
+                            </span>
+                        </div>
+
+                        <!-- Title -->
+                        <h5 class="card-title">{{ webinar.title }}</h5>
+
+                        <!-- Instructor -->
+                        <div class="instructor-info d-flex align-items-center mb-3">
+                            <img [src]="webinar.instructor.avatar" [alt]="webinar.instructor.name"
+                                class="instructor-avatar me-2">
+                            <small class="text-muted">{{ webinar.instructor.organization }}</small>
+                        </div>
+
+                        <!-- Key Highlights -->
+                        <div class="key-highlights mb-3">
+                            <small class="text-muted d-block mb-1">KEY HIGHLIGHTS</small>
+                            <small class="highlights-text">{{ webinar.keyHighlights[0] }}</small>
+                        </div>
+
+                        <!-- Schedule Info -->
+                        <div class="schedule-info mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <small class="text-muted d-block">Goes live on</small>
+                                    <small class="fw-medium">
+                                        {{ formatDate(webinar.scheduledDate!) }}, {{ formatTime(webinar.scheduledDate!)
+                                        }}
+                                    </small>
+                                </div>
+                                <button class="btn btn-sm notify-btn" [class.btn-primary]="webinar.notifyMe"
+                                    [class.btn-outline-secondary]="!webinar.notifyMe" (click)="onNotifyMe(webinar)">
+                                    <i class="fas fa-bell me-1"></i>
+                                    Notify me
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-dark w-100">Watch now</button>
-    </div>
+    </section>
+
 </div>

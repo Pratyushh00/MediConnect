@@ -1,0 +1,20 @@
+<!-- browse-topics.component.html -->
+<div class="browse-topics-container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="section-title mb-0">Browse by topic</h3>
+        <button class="btn btn-outline-secondary btn-sm view-all-btn" (click)="onViewAllClick()">
+            View all
+        </button>
+    </div>
+
+    <div class="topics-wrapper">
+        <div class="topics-container d-flex flex-wrap gap-2">
+            <button *ngFor="let topic of topics; trackBy: trackByTopicId" class="topic-pill btn"
+                (click)="onTopicClick(topic)"
+                [attr.aria-label]="'Browse ' + topic.name + ' with ' + topic.count + ' items'">
+                <span class="topic-name">{{ topic.name }}</span>
+                <span class="topic-count">({{ topic.count }})</span>
+            </button>
+        </div>
+    </div>
+</div>

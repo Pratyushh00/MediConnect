@@ -1,37 +1,6 @@
 <app-navbar></app-navbar>
 <div class="dashboard-bg py-4">
-    <div class="container">
-        <div class="row">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h3 class="fw-bold mb-0">Live webinars</h3>
-                <button class="btn btn-outline-dark">View all</button>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let webinar of webinars">
-                <app-webinar-card [webinar]="webinar"></app-webinar-card>
-            </div>
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h3 class="fw-bold mb-0">Upcoming webinars</h3>
-                <button class="btn btn-outline-dark">View all</button>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let webinar of webinars">
-                <app-webinar-card [webinar]="webinar"></app-webinar-card>
-            </div>
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h3 class="fw-bold mb-0">Top Speakers</h3>
-                <button class="btn btn-outline-dark">View all</button>
-            </div>
-            <div class="speakers-scroll d-flex flex-row gap-3 overflow-auto pb-2" *ngFor="let speaker of speakers">
-                <app-speaker-card [speaker]="speaker"></app-speaker-card>
-            </div>
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h3 class="fw-bold mb-0">Browse by topic</h3>
-                <button class="btn btn-outline-dark">View all</button>
-            </div>
-            <div class="speakers-scroll d-flex flex-row gap-3 overflow-auto pb-2 tags-container"
-                *ngFor="let category of categories">
-                <app-topic-chip [category]="categories"></app-topic-chip>
-            </div>
-            <!-- <app-topic-chip></app-topic-chip> -->
-        </div>
-    </div>
+    <app-webinar-card></app-webinar-card>
+    <app-top-speakers></app-top-speakers>
+    <app-browse-topics></app-browse-topics>
 </div>

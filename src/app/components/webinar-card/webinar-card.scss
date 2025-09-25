@@ -1,44 +1,320 @@
+/* webinar.component.scss */
+
+.webinar-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 0;
+    }
+
+    .view-all-btn {
+        border: 1px solid #dee2e6;
+        color: #6c757d;
+        padding: 0.375rem 1rem;
+        font-size: 0.875rem;
+
+        &:hover {
+            background-color: #f8f9fa;
+            border-color: #adb5bd;
+        }
+    }
+}
+
 .webinar-card {
-    border-radius: 10px;
-    background: #fff;
+    background: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-thumbnail {
+        height: 200px;
+        overflow: hidden;
+        background: #f8f9fa;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        // Live webinar overlay elements
+        .live-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(220, 53, 69, 0.9);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+
+            .live-dot {
+                width: 6px;
+                height: 6px;
+                background: #fff;
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }
+        }
+
+        .viewers-count {
+            position: absolute;
+            top: 12px;
+            left: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .duration-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .audio-controls {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            i {
+                cursor: pointer;
+                font-size: 0.875rem;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .card-content {
+        .credits-section {
+            .credits-badge {
+                font-size: 0.875rem;
+                color: #495057;
+
+                .fa-star {
+                    font-size: 0.75rem;
+                }
+
+                .expiring-text {
+                    color: #dc3545;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #212529;
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .instructor-info {
+            .instructor-avatar {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        .key-highlights {
+            .highlights-text {
+                color: #495057;
+                line-height: 1.4;
+            }
+        }
+
+        .watch-btn {
+            background: #212529;
+            border: none;
+            padding: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #495057;
+                transform: translateY(-1px);
+            }
+        }
+
+        .schedule-info {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+
+            .notify-btn {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.5rem;
+
+                .fa-bell {
+                    font-size: 0.6875rem;
+                }
+            }
+        }
+    }
 }
 
-.thumb {
-    object-fit: cover;
-    height: 180px;
+// Responsive Design
+@media (max-width: 768px) {
+    .webinar-container {
+        padding: 0.75rem;
+
+        .section-title {
+            font-size: 1.25rem;
+        }
+
+        .d-flex.justify-content-between {
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 1rem;
+
+            .view-all-btn {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    .webinar-card {
+        .card-thumbnail {
+            height: 160px;
+        }
+
+        .card-content {
+            padding: 1rem !important;
+
+            .card-title {
+                font-size: 0.9rem;
+            }
+
+            .schedule-info {
+                .d-flex {
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    .notify-btn {
+                        align-self: flex-start;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.badge-live {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 20px;
+@media (max-width: 576px) {
+    .webinar-container {
+        padding: 0.5rem;
+    }
+
+    .webinar-card {
+        .card-thumbnail {
+            height: 140px;
+
+            .viewers-count {
+                left: 60px;
+                font-size: 0.6875rem;
+            }
+
+            .live-badge {
+                font-size: 0.6875rem;
+                padding: 2px 6px;
+            }
+        }
+
+        .card-content {
+            .instructor-info {
+                .instructor-avatar {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }
 
-.duration {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 4px;
+// Animation keyframes
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.credits {
-    font-weight: 500;
+// Additional utility classes
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.title {
-    font-weight: 600;
-    line-height: 1.2;
+// Bootstrap overrides for consistent styling
+.btn {
+    border-radius: 6px;
+}
+
+.card {
+    border: none;
+}
+
+// Custom scrollbar for mobile horizontal scroll
+.row {
+    @media (max-width: 576px) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 2px;
+        }
+
+        .col-lg-4,
+        .col-md-6,
+        .col-12 {
+            flex: 0 0 280px;
+            max-width: 280px;
+        }
+    }
 }

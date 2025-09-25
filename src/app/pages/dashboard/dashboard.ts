@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { WebinarCard } from '../../components/webinar-card/webinar-card';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../../components/navbar/navbar';
-import { SpeakerCard } from '../../speaker-card/speaker-card';
-import { TopicChip } from '../../topic-chip/topic-chip';
+import { BrowseTopics } from '../../components/browse-topics/browse-topics';
+import { TopSpeakers } from '../../components/top-speakers/top-speakers';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss'],
-  imports: [WebinarCard, CommonModule, Navbar, SpeakerCard, TopicChip]
+  imports: [WebinarCard, CommonModule, Navbar, BrowseTopics, TopSpeakers]
 })
 export class Dashboard {
   webinars = [
